@@ -118,7 +118,7 @@ class ImageGallerySaverPlugin: MethodCallHandler,FlutterPlugin {
 
     context?.let {
       appName = if (ai != null) {
-        val charSequence = it.packageManager.getApplicationLabel(ai)
+        val charSequence = it.packageManager.getApplicationLabel(ai!!)
         StringBuilder(charSequence.length).append(charSequence).toString()
       } else {
         "image_gallery_saver"
