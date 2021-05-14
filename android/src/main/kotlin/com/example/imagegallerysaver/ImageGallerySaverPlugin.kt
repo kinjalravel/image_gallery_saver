@@ -57,7 +57,18 @@ class ImageGallerySaverPlugin: MethodCallHandler,FlutterPlugin {
   }
 
   private fun generateFile(extension: String = "", name: String? = null): File {
-    val storePath =  Environment.getExternalStorageDirectory().absolutePath + File.separator + getApplicationName()
+    var storePath =  Environment.getExternalStorageDirectory().absolutePath + File.separator + getApplicationName()
+    
+       context.externalMediaDirs?.let {
+            if (it.isNotEmpty()) {
+
+                it[0].let { mediaDir ->
+                       storePath = "${mediaDirmediaDir?.absolutePath}/documents/images";
+                }
+            }
+        }
+      
+      
     val appDir = File(storePath)
     if (!appDir.exists()) {
       appDir.mkdir()
@@ -71,7 +82,9 @@ class ImageGallerySaverPlugin: MethodCallHandler,FlutterPlugin {
 
   private fun saveImageToGallery(bmp: Bitmap, quality: Int, name: String?): String {
 
-    val file = generateFile("jpg", name = name)
+    val file = 
+      
+      ("jpg", name = name)
     try {
       val fos = FileOutputStream(file)
       println("ImageGallerySaverPlugin $quality")
