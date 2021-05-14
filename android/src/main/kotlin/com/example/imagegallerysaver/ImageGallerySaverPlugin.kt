@@ -71,7 +71,7 @@ class ImageGallerySaverPlugin: MethodCallHandler,FlutterPlugin {
       
     val appDir = File(storePath)
     if (!appDir.exists()) {
-      appDir.mkdir()
+      appDir.mkdirs()
     }
     var fileName = name?:System.currentTimeMillis().toString()
     if (extension.isNotEmpty()) {
