@@ -63,7 +63,7 @@ class ImageGallerySaverPlugin: MethodCallHandler,FlutterPlugin {
             if (it.isNotEmpty()) {
 
                 it[0].let { mediaDir ->
-                       storePath = "${mediaDirmediaDir?.absolutePath}/documents/images";
+                       storePath = "${mediaDir?.absolutePath}/documents/images";
                 }
             }
         }
