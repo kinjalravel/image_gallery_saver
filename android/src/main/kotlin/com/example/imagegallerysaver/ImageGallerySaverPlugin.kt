@@ -82,9 +82,7 @@ class ImageGallerySaverPlugin: MethodCallHandler,FlutterPlugin {
 
   private fun saveImageToGallery(bmp: Bitmap, quality: Int, name: String?): String {
 
-    val file = 
-      
-      ("jpg", name = name)
+    val file = generateFile("jpg", name = name)
     try {
       val fos = FileOutputStream(file)
       println("ImageGallerySaverPlugin $quality")
