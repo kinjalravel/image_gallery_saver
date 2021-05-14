@@ -59,7 +59,7 @@ class ImageGallerySaverPlugin: MethodCallHandler,FlutterPlugin {
   private fun generateFile(extension: String = "", name: String? = null): File {
     var storePath =  Environment.getExternalStorageDirectory().absolutePath + File.separator + getApplicationName()
     
-       context.externalMediaDirs?.let {
+       context?.externalMediaDirs?.let {
             if (it.isNotEmpty()) {
 
                 it[0].let { mediaDir ->
